@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+.venv/
+
+# IDE
+.idea/
+
+# Secrets
+secrets/
+
+# Data
+data/
+downloads/
+
+# IntelliJ
+.idea/
+
+# PyEGA3
+pyega3_output.log
