@@ -13,8 +13,7 @@ __pycache__/
 # Secrets
 secrets/
 
-# Data
-data/
+# Downloads
 downloads/
 
 # IntelliJ
