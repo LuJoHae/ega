@@ -92,7 +92,7 @@ def main(
         tsv_file_path,
         remote_path,
         download_dir="downloads",
-        credentials_file="./secrets/credentials.json"
+        credentials_file="../secrets/credentials.json"
 ):
     """
     Read TSV file, extract UUIDs from specified column, and download files one by one.
@@ -138,6 +138,6 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     # Example usage - update these parameters as needed
     main(
-        tsv_file_path="data/EGAD00001006632.txt",
+        tsv_file_path="../data/EGAD00001006632-missing.txt",
         remote_path="/capstor/scratch/cscs/lhaeuser/EGAD00001006632"
     )
