@@ -140,7 +140,11 @@ def main(
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'  # Optional: customizes the time appearance
+    )
     # Example usage - update these parameters as needed
     main(
         tsv_file_path="../data/EGAD00001006632-missing.txt",
