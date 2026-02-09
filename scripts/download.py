@@ -69,7 +69,7 @@ def copy_to_eiger(file_path: Path, remote_path: Path):
         logging.info(f"Created remote directory {remote_path}")
     except subprocess.CalledProcessError as e:
         logging.error(f"Error creating remote directory {remote_path}: {e}")
-        return
+        return e
 
     if file_path.is_dir():
         try:
@@ -83,9 +83,11 @@ def copy_to_eiger(file_path: Path, remote_path: Path):
             logging.info(f"Successfully copied {file_path} to eiger")
         except subprocess.CalledProcessError as e:
             logging.error(f"Error copying {file_path} to eiger: {e}")
+            return e
 
     elapsed_time = time.time() - start_time
     logging.info(f"copy_to_eiger completed in {elapsed_time:.2f} seconds")
+    return None
 
 
 def main(
@@ -128,10 +130,13 @@ def main(
             continue
 
         # Copy to eiger
-        copy_to_eiger(file_path=file_path, remote_path=remote_path)
+        err = copy_to_eiger(file_path=file_path, remote_path=remote_path)
 
-        # Delete local file after copying
-        delete_file(file_path)
+        # Delete local file only after copying
+        if err:
+            logging.warning(f"Error copying {uuid} to eiger: {err}")
+        else:
+            delete_file(file_path)
 
 
 if __name__ == "__main__":
