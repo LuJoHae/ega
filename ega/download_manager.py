@@ -47,7 +47,7 @@ class DownloadManager:
             success_count = 0
             using_secondary = False
             for i, file_id in enumerate(files, 1):
-                logging.debug(f"File {i}/{len(files)}: {file_id}")
+                logging.info(f"File {i}/{len(files)}: {file_id}")
 
                 # Check if already downloaded
                 # Check if already downloaded in primary
