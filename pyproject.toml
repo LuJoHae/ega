@@ -7,3 +7,19 @@ dependencies = [
     "ipykernel>=6.29.5",
     "pyega3>=5.2.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-mock>=3.10.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.setuptools]
+packages = ["ega"]  # Only these are packages

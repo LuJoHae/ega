@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+venv/
+env/
+.venv/
+__pycache__/
+*.lock
+
+# Build and Dist folders
+dist/
+build/
+out/
+*.egg-info/
+
+# Large Data Files
+*.csv
+*.json
+*.sql
+*.log
+
+# Binary/Media files
+*.png
+*.jpg
+*.pdf
+*.zip
+
+# IDE folders
+.idea/
+.vscode/
+.git/
+
+# Further directories
+data/
+jupyter/

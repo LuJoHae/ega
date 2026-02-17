@@ -1,0 +1,6 @@
+ipykernel>=6.29.5
+pyega3>=5.2.0
+
+[dev]
+pytest>=7.0.0
+pytest-mock>=3.10.0

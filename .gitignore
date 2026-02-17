@@ -21,3 +21,4 @@ downloads/
 
 # PyEGA3
 pyega3_output.log
+*.log
