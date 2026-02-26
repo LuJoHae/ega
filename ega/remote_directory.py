@@ -74,13 +74,16 @@ class RemoteDirectory:
             full_path = str(self.path / subpath)
         logging.debug(f"Checking if directory {full_path} exists")
         if self.is_remote:
+            logging.debug(f"Checking if remote dir {full_path} exists")
             result = subprocess.run(
                 ["ssh", self.host, f"test -d {full_path} && echo 1 || echo 0"],
                 capture_output=True,
                 text=True
             )
+            logging.debug(f"SSH result: {result.stdout.strip()}")
             return result.stdout.strip() == "1"
         else:
+            logging.debug(f"Checking if local dir {full_path} exists")
             return Path(full_path).is_dir()
 
     def read_file(self, subpath: str) -> Optional[str]:
