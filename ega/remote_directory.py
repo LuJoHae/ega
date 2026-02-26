@@ -80,7 +80,7 @@ class RemoteDirectory:
                 capture_output=True,
                 text=True
             )
-            logging.debug(f"SSH result: {result.stdout.strip()}")
+            logging.debug(f"SSH result: {result}")
             return result.stdout.strip() == "1"
         else:
             logging.debug(f"Checking if local dir {full_path} exists")
